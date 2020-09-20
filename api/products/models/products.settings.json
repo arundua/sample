@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "name": "products"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "Images": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "Newvalue": {
+      "type": "enumeration",
+      "enum": [
+        "Morning",
+        "India",
+        "Good"
+      ]
+    },
+    "properties": {
+      "type": "json"
+    },
+    "variations": {
+      "collection": "variation",
+      "via": "product"
+    },
+    "blue": {
+      "type": "component",
+      "repeatable": true,
+      "component": "custom.custom"
+    }
+  }
+}
